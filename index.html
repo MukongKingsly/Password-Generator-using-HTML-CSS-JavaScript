@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Password Generator</title>
+</head>
+<body>
+  <div class="container">
+  <div class="small-container">
+    <h1 class="page-title">Password Generator</h1>
+    <h3 class="password-display" id="passwordDisplay">password</h3>
+    <form id="passwordGeneratorForm" class="form">
+      <div class="input-group">
+        <div class="password-attributes">
+      <label for="characterAmountNumber">Number Of Characters</label>
+        <input type="range" min="1" max="50" value="10" id="characterAmountRange">
+        <input class="input-field" type="number" min="1" max="50" value="10" id="characterAmountNumber">
+      </div>
+<hr class="hr-line">
+      <div class="password-attributes">
+        <label for="includeUppercase">Include Uppercase</label>
+        <input class="input-field" type="checkbox" id="includeUppercase">
+      </div>
+      <hr class="hr-line">
+        <div class="password-attributes">
+          <label for="includeNumbers">Include Numbers</label>
+          <input class="input-field" type="checkbox" id="includeNumbers">
+        </div>
+        <hr class="hr-line">
+
+     <div class="password-attributes">
+      <label for="includeSymbols">Include Symbols</label>
+      <input class="input-field" type="checkbox" id="includeSymbols">
+     </div>
+     <hr class="hr-line">
+      <button type="submit" class="btn">Generate Password</button>
+      </div>
+    </form>
+  </div>
+  </div>
+</body>
+</html>
