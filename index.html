@@ -15,9 +15,38 @@
           <h1 class="page-title">Password Generator</h1>
         </header>
         <h2 class="password-display" id="passwordDisplay"></h2>
-        <button class="btn copy-button" id="copyButton">
-          Copy to Clipboard
-        </button>
+        <div class="copy-to-clipboard-div">
+          <button class="btn copy-button" id="copyButton">
+            Copy to Clipboard
+          </button>
+          <button class="svg-button" id="svg-button">
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="45.000000pt"
+              height="45.000000pt"
+              viewBox="0 0 192.000000 192.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g
+                transform="translate(0.000000,192.000000) scale(0.100000,-0.100000)"
+                fill="#FFFFFF"
+                stroke="none"
+              >
+                <path
+                  d="M821 1585 c-207 -47 -392 -211 -462 -410 -33 -95 -45 -203 -32 -294
+                    23 -156 77 -264 188 -376 236 -238 614 -245 875 -17 63 55 142 172 168 251
+                    l21 61 -82 0 -82 0 -33 -64 c-60 -115 -177 -207 -309 -241 -249 -65 -511 94
+                    -578 350 -80 308 178 616 496 592 42 -4 100 -15 129 -26 63 -24 158 -85 167
+                    -107 4 -11 -33 -55 -118 -140 l-124 -124 278 0 277 0 0 277 0 278 -88 -88
+                    c-48 -48 -91 -87 -95 -87 -4 0 -35 21 -69 46 -76 56 -113 75 -198 104 -85 28
+                    -240 35 -329 15z"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+
         <form id="passwordGeneratorForm" class="form">
           <fieldset class="input-group">
             <legend>Password Attributes</legend>

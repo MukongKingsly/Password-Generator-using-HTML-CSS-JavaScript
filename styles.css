@@ -130,9 +130,21 @@ body {
   background-color: #ffffff33;
 }
 
+.copy-to-clipboard-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .small-container .text-copied-btn {
   color: #fff;
   background-color: hsl(var(--success-hsl), 0.5);
+}
+
+.small-container .svg-button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
 
 #characterAmountNumber {
@@ -148,6 +160,11 @@ body {
 @media (width < 661px) {
   .password-attributes label {
     font-size: 1rem;
+  }
+
+  .copy-to-clipboard-div svg {
+    width: 45px;
+    height: 45px;
   }
 
   .small-container {

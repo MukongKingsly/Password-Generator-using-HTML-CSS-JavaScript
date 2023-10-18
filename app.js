@@ -7,6 +7,7 @@ const form = document.getElementById("passwordGeneratorForm");
 const passwordDisplay = document.getElementById("passwordDisplay");
 const passwordInput = document.getElementById("passwordInput");
 const copyButton = document.getElementById("copyButton");
+const svgButton = document.getElementById("svg-button");
 
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122);
@@ -78,6 +79,10 @@ copyButton.addEventListener("click", () => {
   copyToClipboard(passwordDisplay.innerText);
   copyButton.innerText = "Password copied to clipboard";
   copyButton.classList.add("text-copied-btn");
+});
+
+svgButton.addEventListener("click", () => {
+  window.location.reload();
 });
 
 function copyToClipboard(text) {
