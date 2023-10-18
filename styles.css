@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 :root {
@@ -15,13 +17,14 @@
 
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 .container {
   background-image: url("./img/backgroundImage.jpg");
   height: 100vh;
   width: 100vw;
-  min-width: 310px;
+  min-width: 320px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -34,7 +37,7 @@ body {
   box-shadow: 0 0 15px 0 var(--color);
   padding: 40px 30px;
   width: 80%;
-  min-width: 300px;
+  min-width: 320px;
   max-width: 600px;
   border-radius: 20px;
 }
@@ -74,10 +77,6 @@ body {
   width: 100%;
 }
 
-.password-attributes label {
-  font-size: 1.5rem;
-}
-
 .input-field {
   width: 30px;
   height: 30px;
@@ -88,7 +87,6 @@ body {
 }
 
 .hr-line {
-  color: rgb(255, 0, 0);
   width: 100%;
 }
 
@@ -106,14 +104,14 @@ body {
 .password-display {
   background-color: white;
   color: black;
-  padding: 1rem;
+  font-size: 16px;
   border: 1px solid #333;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   word-break: break-all;
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .btn {
@@ -128,6 +126,15 @@ body {
   margin: 10px 0;
 }
 
+.btn:hover {
+  background-color: #ffffff33;
+}
+
+.small-container .text-copied-btn {
+  color: #fff;
+  background-color: hsl(var(--success-hsl), 0.5);
+}
+
 #characterAmountNumber {
   width: 60px;
   background-color: rgba(145, 145, 145, 0.315);
@@ -138,12 +145,42 @@ body {
   font-size: 1.5rem;
 }
 
-.btn:hover {
-  background-color: #ffffff33;
-}
-
 @media (width < 661px) {
   .password-attributes label {
     font-size: 1rem;
+  }
+
+  .small-container {
+    padding: 40px 20px;
+    width: 95%;
+  }
+  .page-title {
+    font-size: 1.3rem;
+  }
+  .password-display {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  #characterAmountRange {
+    width: 60%;
+  }
+
+  #characterAmountNumber {
+    width: 30px;
+    font-size: 1rem;
+  }
+  .input-field {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (width < 491px) {
+  .password-attributes label {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 0.8rem;
+    /* margin: 10px 0; */
   }
 }
