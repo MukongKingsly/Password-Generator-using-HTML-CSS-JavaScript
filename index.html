@@ -10,102 +10,111 @@
   </head>
   <body>
     <main class="container">
-      <section class="small-container">
+      <section class="glass-card">
         <header>
           <h1 class="page-title">Password Generator</h1>
+          <p class="subtitle">Create strong, secure passwords instantly</p>
         </header>
-        <h2 class="password-display" id="passwordDisplay"></h2>
-        <div class="copy-to-clipboard-div">
-          <button class="btn copy-button" id="copyButton">
-            Copy to Clipboard
-          </button>
-          <button class="svg-button" id="svg-button">
-            <svg
-              version="1.0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="45.000000pt"
-              height="45.000000pt"
-              viewBox="0 0 192.000000 192.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <g
-                transform="translate(0.000000,192.000000) scale(0.100000,-0.100000)"
-                fill="#FFFFFF"
-                stroke="none"
+
+        <div class="password-display-container">
+          <h2 class="password-display" id="passwordDisplay"></h2>
+          <div class="password-actions">
+            <button class="btn copy-button" id="copyButton">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
               >
                 <path
-                  d="M821 1585 c-207 -47 -392 -211 -462 -410 -33 -95 -45 -203 -32 -294
-                    23 -156 77 -264 188 -376 236 -238 614 -245 875 -17 63 55 142 172 168 251
-                    l21 61 -82 0 -82 0 -33 -64 c-60 -115 -177 -207 -309 -241 -249 -65 -511 94
-                    -578 350 -80 308 178 616 496 592 42 -4 100 -15 129 -26 63 -24 158 -85 167
-                    -107 4 -11 -33 -55 -118 -140 l-124 -124 278 0 277 0 0 277 0 278 -88 -88
-                    c-48 -48 -91 -87 -95 -87 -4 0 -35 21 -69 46 -76 56 -113 75 -198 104 -85 28
-                    -240 35 -329 15z"
+                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
                 />
-              </g>
-            </svg>
-          </button>
+                <path
+                  d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
+                />
+              </svg>
+              Copy
+            </button>
+            <button class="btn refresh-button" id="svg-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+                />
+                <path
+                  d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+                />
+              </svg>
+              Refresh
+            </button>
+          </div>
         </div>
 
         <form id="passwordGeneratorForm" class="form">
           <fieldset class="input-group">
-            <legend>Password Attributes</legend>
-            <div class="password-attributes">
-              <label for="characterAmountNumber">Number Of Characters</label>
-              <input
-                type="range"
-                min="1"
-                max="50"
-                value="10"
-                id="characterAmountRange"
-                aria-valuemin="1"
-                aria-valuemax="50"
-                aria-valuenow="10"
-              />
-              <input
-                class="input-field"
-                type="number"
-                min="1"
-                max="50"
-                value="10"
-                id="characterAmountNumber"
-              />
+            <legend>Password Settings</legend>
+            <div class="form-group">
+              <div class="password-attributes">
+                <label for="characterAmountNumber"
+                  >Length: <span id="lengthValue">10</span></label
+                >
+                <input
+                  type="range"
+                  min="1"
+                  max="50"
+                  value="10"
+                  id="characterAmountRange"
+                  aria-valuemin="1"
+                  aria-valuemax="50"
+                  aria-valuenow="10"
+                />
+              </div>
+
+              <div class="checkbox-group">
+                <div class="password-attributes">
+                  <input
+                    class="input-field"
+                    type="checkbox"
+                    id="includeUppercase"
+                    checked
+                  />
+                  <label for="includeUppercase">Uppercase (A-Z)</label>
+                </div>
+
+                <div class="password-attributes">
+                  <input
+                    class="input-field"
+                    type="checkbox"
+                    id="includeNumbers"
+                    checked
+                  />
+                  <label for="includeNumbers">Numbers (0-9)</label>
+                </div>
+
+                <div class="password-attributes">
+                  <input
+                    class="input-field"
+                    type="checkbox"
+                    id="includeSymbols"
+                    checked
+                  />
+                  <label for="includeSymbols">Symbols (!@#...)</label>
+                </div>
+              </div>
             </div>
-            <hr class="hr-line" />
-            <div class="password-attributes">
-              <label for="includeUppercase">Include Uppercase</label>
-              <input
-                class="input-field"
-                type="checkbox"
-                id="includeUppercase"
-                checked
-              />
-            </div>
-            <hr class="hr-line" />
-            <div class="password-attributes">
-              <label for="includeNumbers">Include Numbers</label>
-              <input
-                class="input-field"
-                type="checkbox"
-                id="includeNumbers"
-                checked
-              />
-            </div>
-            <hr class="hr-line" />
-            <div class="password-attributes">
-              <label for="includeSymbols">Include Symbols</label>
-              <input
-                class="input-field"
-                type="checkbox"
-                id="includeSymbols"
-                checked
-              />
-            </div>
-            <hr class="hr-line" />
-            <button type="submit" class="btn">Generate Password</button>
+
+            <button type="submit" class="btn generate-btn">
+              Generate Password
+            </button>
           </fieldset>
         </form>
-        <section class="copy-section"> </section>
       </section>
     </main>
   </body>
